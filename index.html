@@ -15,31 +15,31 @@
         <!--CAIXA DE FORMULÁRIO PARA LOGIN-->
         <div class="formulario">
 
-            <form action="#">
+            <!--DENTRO DE ACTION TEREMOS O ARQUIVO EM JAVA SCRIPT PARA VALIDAR O FORMULÁRIO-->
+            <form action="acesso.js">
                 <h2>Login</h2>
                 <input class="preencher" type="email" name="email" id="email" placeholder="E-mail">
 
                 <h2>Password</h2>
                 <input class="preencher" type="password" name="senha" id="senha" placeholder="Senha">
+
+                <!--LEMBRAR DE MIM-->
+                <input type="checkbox" name="lembrar" id="lembrar">
+                <span id="lembrartexto">Lembrar de mim</span>
+
+                <!--NÃO TEM CONTA? REGISTRE-SE!-->
+                <a id="registre" href="#">Registre-se!</a>
+
+                <!--DIV ESQUECI MINHA SENHA-->
+                <div id="esqueci-a-senha">
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+                <br>
+
+                <div class="button">
+                    <button id="entrar" type="submit">ENTRAR</button>
+                </div>
             </form>
-            
-            <!--LEMBRAR DE MIM-->
-            <input type="checkbox" name="lembrar" id="lembrar">
-            <span id="lembrartexto">Lembrar de mim</span>
-
-            <!--NÃO TEM CONTA? REGISTRE-SE!-->
-            <a id="registre" href="#">Registre-se!</a>
-
-            <!--DIV ESQUECI MINHA SENHA-->
-            <div id="esqueci-a-senha">
-                <a href="#">Esqueci minha senha</a>
-            </div>
-            <br>
-
-            <!--BOTÃO ENTRAR-->
-            <div class="button">
-                <button id="entrar" type="submit">ENTRAR</button>
-            </div>
         </div>
     </div>
 </body>
