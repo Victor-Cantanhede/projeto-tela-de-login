@@ -15,17 +15,37 @@
         <!--CAIXA DE FORMULÁRIO PARA LOGIN-->
         <div class="formulario">
 
-            <!--DENTRO DE ACTION TEREMOS O ARQUIVO EM JAVA SCRIPT PARA VALIDAR O FORMULÁRIO-->
-            <form action="acesso.js">
-                <h2>Login</h2>
-                <input class="preencher" type="email" name="email" id="email" placeholder="E-mail">
+            <!--
+            CONSIDERAÇÕES:
+                - Na tag FORM podemos incluir as configurações abaixo:
+                    * ACTION = Para dizer qual arquivo deverá ser executado em JS ou PHP;
+                    * METHOD = Para dizer o tipo de formulário se POST ou GET (post é mais seguro);
+                    * AUTOCOMPLETE = Para permitir ou impedir o preenchimento automático do formulário.
+                
+                - Nos campos de preenchimento devemos sempre utilizar a tag LABEL para relacionar o nome do campo com o próprio campo de preenchimento, dentro da configuração "for" preencha o nome do id da tag INPUT.
 
-                <h2>Password</h2>
-                <input class="preencher" type="password" name="senha" id="senha" placeholder="Senha">
+                - Na tag INPUT podemos incluir as configurações abaixo:
+                    * PLACEHOLDER = Insere um texto sombreado no fundo do campo de preenchimento;
+                    * REQUIRED = Torna o preenchimento obrigatório para envio/validação;
+                    * MINLENGHT e MAXLENGHT = Determina a quantidade mínima e máxima de caracteres no preenchimento.
+
+                - O botão utilizado para validar o formulário sempre deve estar dentro da tag FORM e ele deve ter a configuração "type=submit".
+            -->
+
+            <!--FORMULÁRIO-->
+            <form action="acesso.js" method="post" autocomplete="off">
+
+                <!--FORM USUÁRIO-->
+                <label for="label-email"><h2>Login</h2></label>
+                <input class="preencher" type="email" name="email" id="label-email" placeholder="Digite seu E-mail" required>
+
+                <!--FORM SENHA-->
+                <label for="label-senha"><h2>Password</h2></label>
+                <input class="preencher" type="password" name="senha" id="label-senha" placeholder="Digite sua Senha" required minlength="8" maxlength="8">
 
                 <!--LEMBRAR DE MIM-->
                 <input type="checkbox" name="lembrar" id="lembrar">
-                <span id="lembrartexto">Lembrar de mim</span>
+                <label for="lembrar"><span id="lembrartexto">Lembrar de mim</span></label>
 
                 <!--NÃO TEM CONTA? REGISTRE-SE!-->
                 <a id="registre" href="#">Registre-se!</a>
@@ -36,6 +56,7 @@
                 </div>
                 <br>
 
+                <!--BOTÃO ENTRAR-->
                 <div class="button">
                     <button id="entrar" type="submit">ENTRAR</button>
                 </div>
